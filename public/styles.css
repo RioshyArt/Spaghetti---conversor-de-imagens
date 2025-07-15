@@ -1,0 +1,255 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #000000; 
+    color: #9c27b0; 
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Center {
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(156, 39, 176, 0.6), 0 0 15px rgba(156, 39, 176, 0.3); 
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #e0b0ff;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    font-weight: 800;
+    text-shadow: 0 0 10px rgba(224, 176, 255, 0.8);
+}
+
+p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: #cccccc;
+}
+
+.file-message {
+    font-size: 0.9em;
+    color: #cccccc; /* Cor padrão para a mensagem */
+    margin-top: 5px; /* Margem acima para separar do botão */
+    margin-bottom: 20px; /* Margem abaixo para separar do próximo elemento */
+    
+    text-align: center; /* ESTA LINHA CENTRALIZA O TEXTO DENTRO DO ELEMENTO */
+    
+    min-height: 1.2em; /* Garante que o espaço seja reservado */
+    display: block; /* ESTA LINHA FAZ O SPAN SE COMPORTAR COMO UM BLOCO */
+}
+
+.file-message.selected-files {
+    color: #e0b0ff; /* Roxo mais claro quando arquivos são selecionados */
+    font-weight: bold;
+}
+
+input[type="file"]#upload { 
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 25px auto; 
+    padding: 12px 15px; 
+    border: 2px dashed #bb33ff; 
+    border-radius: 8px;
+    background-color: #2a2a2a; 
+    cursor: pointer;
+    font-size: 1em;
+    color: #e0b0ff; 
+    width: fit-content;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(187, 51, 255, 0.4); 
+}
+
+input[type="file"]#upload:hover {
+    background-color: #3a3a3a; 
+    border-color: #8a00cc; 
+    box-shadow: 0 0 15px rgba(187, 51, 255, 0.6); 
+}
+
+input[type="file"]#upload::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0; 
+    padding: 0;
+    margin: 0;
+}
+
+input[type="file"]#upload::before { 
+    content: 'Escolher Imagem(ns)'; 
+    
+    justify-content: center; 
+    align-items: center; 
+    display: flex;
+    background: linear-gradient(to top, #9c27b0, #7b1fa2); 
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    text-shadow: 0 0 5px rgba(255,255,255,0.3); 
+}
+
+input[type="file"]#upload:hover::before {
+    background: linear-gradient(to top, #7b1fa2, #6a1b9a); 
+}
+
+label[for="formatoSaida"] { 
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #e0b0ff; 
+    font-size: 1.1em;
+}
+
+select#formatoSaida { 
+    padding: 10px 15px;
+    border: 1px solid #666666; 
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: calc(100% - 30px);
+    max-width: 300px;
+    font-size: 1em;
+    appearance: none;
+    background-color: #2a2a2a; 
+    color: #f0f0f0; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292%22%20height%3D%22292%22%3E%3Cpath%20fill%3D%22%23bb33ff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.9c-6.8%200-13.5%202.8-17.5%205.8-4%203-4.4%208.5-.8%2013.5l129.5%20146.7c2.8%203.1%207.2%204.7%2011.6%204.7s8.8-1.6%2011.6-4.7l129.5-146.7c3.6-5 .2-10.5-3.9-13.5z%22%2F%3E%3C%2Fsvg%3E'); 
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); 
+}
+
+select#formatoSaida:focus { 
+    outline: none;
+    border-color: #bb33ff; 
+    box-shadow: 0 0 0 3px rgba(187, 51, 255, 0.4), inset 0 0 5px rgba(0,0,0,0.5); 
+}
+
+button#converter { 
+    padding: 15px 30px;
+    background-color: #8a00cc; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(138, 0, 204, 0.6); 
+    text-shadow: 0 0 8px rgba(255,255,255,0.3); 
+}
+
+button#converter:hover {
+    background-color: #bb33ff; 
+    transform: translateY(-3px); 
+    box-shadow: 0 8px 20px rgba(187, 51, 255, 0.8); 
+}
+
+button#converter:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 8px rgba(138, 0, 204, 0.6);
+}
+
+#mensagem { 
+    margin-top: 30px;
+    min-height: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e0b0ff; 
+    text-shadow: 0 0 5px rgba(224, 176, 255, 0.5); 
+    text-align: center; 
+}
+
+#mensagem.error {
+    color: #e74c3c; 
+    text-shadow: 0 0 8px rgba(231, 76, 60, 0.5);
+}
+
+#mensagem.success {
+    color: #4CAF50; 
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+#downloadLink { 
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background-color: #6a1b9a; 
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.6); 
+    text-shadow: 0 0 8px rgba(255,255,255,0.3); 
+}
+
+#downloadLink:hover {
+    background-color: #5c1884; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(92, 24, 132, 0.8);
+}
+
+#downloadLink:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(106, 27, 154, 0.4);
+}
+
+@media (max-width: 768px) {
+    .Center {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button#converter, 
+    #downloadLink {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    select#formatoSaida { 
+        width: 100%;
+    }
+
+    input[type="file"]#upload {
+        width: 100%; 
+        height: auto; 
+        padding: 0; 
+    }
+
+    input[type="file"]#upload::before {
+        padding: 10px 15px; 
+        font-size: 0.9em;
+    }
+}
