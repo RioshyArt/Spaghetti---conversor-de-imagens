@@ -1,0 +1,1 @@
+# Spaghetti---conversor-de-imagens
