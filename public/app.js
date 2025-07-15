@@ -9,7 +9,7 @@ converterBtn.addEventListener('click', async () => {
     const formatoSaidaValor = formatoSaidaSelect.value; 
 
     if (arquivos.length === 0) {
-        mensagem.textContent = "Por favor, selecione uma ou mais imagens para dar certo, pulta!";
+        mensagem.textContent = "Por favor, selecione uma ou mais imagens para dar certo!";
         mensagem.classList.add('error');
         mensagem.classList.remove('success');
         return;
@@ -39,7 +39,7 @@ converterBtn.addEventListener('click', async () => {
             downloadLink.textContent = `Baixar Imagens Convertidas (${formatoSaidaValor.toUpperCase()}s)`;
             downloadLink.style.display = 'block';
 
-            mensagem.textContent = `Conversão de ${arquivos.length} imagem Prontinho! Clique para baixar o ZIP, clique novamente se quiser converter outra vadia.`;
+            mensagem.textContent = `Conversão de ${arquivos.length} imagem Prontinho! Clique para baixar o ZIP :3.`;
             mensagem.classList.add('success');
             mensagem.classList.remove('error');
         } else {
